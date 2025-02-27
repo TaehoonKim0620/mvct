@@ -18,6 +18,8 @@
     </environment>
   </environments>
   <mappers>
-		<mapper resource="mybatis/mapper/FoodInfoMapper.xml" />
+		<mapper resource="mybatis/Mapper/FoodInfoMapper.xml" />
+		<mapper resource="mybatis/Mapper/UserInfoMapper.xml" />
+		<mapper resource="mybatis/Mapper/GameInfoMapper.xml"/>
   </mappers>
 </configuration>

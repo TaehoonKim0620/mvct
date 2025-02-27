@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mvc.GameInfoMapper">
+	<select id="selectGameInfos"
+		resultType="com.web.dto.GameInfoDTO">
+		select GI_NUM, GI_NAME, GI_PRICE, GI_GENRE, GI_DESC from GAME_INFO;
+	</select>
+	<select id="selectGameInfo" resultType="com.web.dto.GameInfoDTO">
+		SELECT GI_NUM, GI_NAME, GI_PRICE GI_GENRE, GI_DESC FROM GAME_INFO
+		WHERE GI_NUM=#{giNum}
+	</select>
+	<insert id="insertGameInfo">
+	INSERT INTO GAME_INFO(GI_NAME, GI_PRICE, GI_GENRE, GI_DESC)
+	VALUES(#{giName},#{giPrice},#{giGenre},#{giDesc})
+	</insert>
+	<update id="updateGameInfo">
+		update GAME_INFO
+		set GI_NAME = '배틀그라운드2'
+		,GI_PRICE=0
+		,GI_GENRE='슈팅'
+		,GI_DESC='역시 1만한 게임은 없군'
+		where GI_NUM=2;
+	</update>
+	<delete id="deleteGameInfo">
+	delete from GAME_INFO where GI_NUM=1;
+	</delete>
+</mapper>
